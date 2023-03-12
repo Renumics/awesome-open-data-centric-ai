@@ -25,7 +25,8 @@ We include useful tools that have an **open-source license** and are **actively 
 In order to keep a useful focus and to prevent duplicate work, we exclude the following topics:
 1. DCAI tools for tabular data. There is an [awesome list](https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai) for that maintained by the [Ydata team](https://github.com/Data-Centric-AI-Community).
 2. Labeling tools. Although labeling is part of the DCAI workflow, we refer to the [awesome list](https://github.com/zenml-io/awesome-open-data-annotation) of the [ZenML team](https://github.com/zenml-io) on that topic. 
-3. MLOps tooling. There are many gray areas between MLOps and DCAI and some distinctions have yet to be made. We exclude all topics that are clearly out of the DCAI scope (e.g. AutoML, serving, orchestration etc.).
+3. MLOps tooling. We exclude all topics that are clearly out of the DCAI scope and refer to established [MLOps awesome lists](https://github.com/EthicalML/awesome-production-machine-learning) for these tools.
+4. Research papers. We focus on industrial-ready open source tooling, check out [this list](https://github.com/HazyResearch/data-centric-ai) for a research-oriented view on DCAI.
 
 
 
