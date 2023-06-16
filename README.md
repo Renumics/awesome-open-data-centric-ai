@@ -22,15 +22,56 @@ At [Renumics](https://renumics.com), we believe DCAI is an important puzzle piec
 
 We include useful tools that have an **open-source license** and are **actively maintained** in this collection. All tools mentioned are useful for building DCAI workflows on **unstructured data** (e.g. images, audio, video, time-series, text). 
 
-In order to keep a useful focus and to prevent duplicate work, we exclude the following topics:
-1. DCAI tools for tabular data. There is an [awesome list](https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai) for that maintained by the [Ydata team](https://github.com/Data-Centric-AI-Community).
-2. Labeling tools. Although labeling is part of the DCAI workflow, we refer to the [awesome list](https://github.com/zenml-io/awesome-open-data-annotation) of the [ZenML team](https://github.com/zenml-io) on that topic. 
-3. MLOps tooling. We exclude all topics that are clearly out of the DCAI scope and refer to established [MLOps awesome lists](https://github.com/EthicalML/awesome-production-machine-learning) for these tools.
-4. Research papers. We focus on industrial-ready open source tooling, check out [this list](https://github.com/HazyResearch/data-centric-ai) for a research-oriented view on DCAI.
+We also collect **workflow snippets** into a **data-centric AI playbook** that show how typical tasks can be solved with open source tooling.
+
+In order to keep a useful focus and to prevent duplicate work, we exclude some topics from this list such as tooling for tabular data, dedicated labeling tools, MLOps tooling as well as research papers. Please check out the [further reading](#further-reading) section to find awesome lists for these topics.
+
+## :open_hands: Contributing
+Do you think something is missing? Please help contribute to this list by contacting us or adding a pull request.
+
+# 🏀 Data-centric AI playbook
+
+<p align="center"><a href="https://github.com/Renumics/awesome-open-data-centric-ai"><img src="static/img/dcai_workflow.svg" width="100%"/></a></p>
+
+## Exploratory data analysis (EDA)
+
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Understand distributions](https://renumics.com/docs/playbook/huggingface-embedding) | image  | Use the Huggingface transformers library to compute image embeddings and explore the dataset based on the similarity map and additional metdata. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/huggingface_embedding.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Cleaning
+
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Detect duplicates](https://renumics.com/docs/playbook/duplicates-annoy/) | agnostic  | Use the Annoy library to detect nearest neighbors in the embedding space and inspect data points that are duplicates / near duplicates. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/detect_duplicates.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| [Detect outliers](https://renumics.com/docs/playbook/outliers-cleanlab/) | agnostic  | Use the Cleanlab library to compute outlier scores based on model output (embeddings, probabilities) and inspect outlier candidates. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/outlier_cleanlab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| [Detect image issues](https://renumics.com/docs/playbook/cv-issues/) | image  | Use the Cleanvision library to extrapact typical image issues (brightness, blurr, aspect ratio, SNR and duplicates) and identify critical segments through manual inspection.| <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/playbook_initial_draft/playbook/rookie/cv_issue_detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Annotation
+
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Find label inconsistencies](https://renumics.com/docs/playbook/label-errors-cleanlab/) | agnostic | Use the Cleanlab library to compute label error flags based on model probabilities and manually inspect critical data segments. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/label_errors_cleanlab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Modeling
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Detect leakage](https://renumics.com/docs/playbook/leakage-annoy/) | agnostic | Use nearest neighbor distances to identify candidates for data leakage and manual inspect them | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/leakage_annoy.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Validation
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Inspect decision boundaries](https://renumics.com/docs/playbook/decision-boundary/) | agnostic | Compute a decision boundary score based on certainty ratios and inspect the results in a scatter plot. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/decision_boundary_detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Monitoring
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Detect data drift ](https://renumics.com/docs/playbook/label-errors-cleanlab/) | agnostic | Compute the cosine distance of the k-nearest neighbor in the embedding space as the drift distance and inspect critical segments. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/drift_kcore.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 
+# 🧰 Tooling
 
-## 📒 Contents
+## 📒 Categories
 
 
 - [Data versioning](#data-versioning)
@@ -45,11 +86,8 @@ In order to keep a useful focus and to prevent duplicate work, we exclude the fo
 - [Augmentation and synthetic data](#augmentation-and-synthetic-data)
 - [Adversarial robustness](#adversarial-robustness)
 
-## :open_hands: Contributing
-Do you think something is missing? Please help contribute to this list by contacting us or adding a pull request.
 
-
-# Data versioning
+## Data versioning
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -59,7 +97,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/delta-io/delta"><img src="https://avatars.githubusercontent.com/u/49767398?s=200&v=4"  width="100"/></a> | [Delta Lake](https://github.com/delta-io/delta) | An open-source storage framework that enables building a Lakehouse architecture.  | ![GitHub stars](https://img.shields.io/github/stars/delta-io/delta?style=social) | <a href="https://github.com/delta-io/delta/blob/main/LICENSE"><img src="https://img.shields.io/github/license/delta-io/delta" height="15"/></a> |
 | <a href="https://github.com/treeverse/lakeFS"><img src="https://raw.githubusercontent.com/treeverse/lakeFS/master/docs/assets/img/logo_large.png"  width="100"/></a> | [lakeFS](https://github.com/treeverse/lakeFS) | lakeFS is an open-source tool that transforms your object storage into a Git-like repository. | ![GitHub stars](https://img.shields.io/github/stars/treeverse/lakeFS?style=social) | <a href="https://github.com/treeverse/lakeFS/blob/main/LICENSE"><img src="https://img.shields.io/github/license/treeverse/lakeFS" height="15"/></a> |
 
-# Embeddings and pre-trained models
+## Embeddings and pre-trained models
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -68,7 +106,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/huggingface/transformers"><img src="https://avatars.githubusercontent.com/u/25720743?s=200&v=4"  width="100"/></a> | [Huggingface transformers](https://github.com/huggingface/transformers) | State-of-the-art Machine Learning for Pytorch, TensorFlow, and JAX.   | ![GitHub stars](https://img.shields.io/github/stars/huggingface/transformers?style=social) | <a href="https://github.com/huggingface/transformers/blob/main/LICENSE"><img src="https://img.shields.io/github/license/huggingface/transformers" height="15"/></a> |
 | <a href="https://github.com/lightly-ai/lightly"><img src="https://avatars.githubusercontent.com/u/50146475?s=200&v=4"  width="100"/></a> | [Lightly](https://github.com/lightly-ai/lightly) | Lightly is a computer vision framework for self-supervised learning.    | ![GitHub stars](https://img.shields.io/github/stars/lightly-ai/lightly?style=social) | <a href="https://github.com/lightly-ai/lightly/blob/main/LICENSE"><img src="https://img.shields.io/github/license/lightly-ai/lightly" height="15"/></a> |
 
-# Visualization and Interaction
+## Visualization and Interaction
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -81,7 +119,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/ydataai/ydata-profiling"><img src="https://assets.ydata.ai/oss/ydata-profiling_red.png"  width="100"/></a> | [YData Profiling](https://github.com/ydataai/ydata-profiling) | YData Profiling is a python package to perform Exploratory Data Analysis (EDA) for tabular and time-series data. | ![GitHub stars](https://img.shields.io/github/stars/ydataai/ydata-profiling?style=social) | <a href="https://github.com/ydataai/ydata-profiling/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ydataai/ydata-profiling" height="15"/></a> |
 
 
-# Outlier and noise detection
+## Outlier and noise detection
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -90,7 +128,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/datamllab/tods"><img src="https://github.com/datamllab/tods/blob/master/docs/source/img/tods_logo.png"  width="100"/></a> | [TODS](https://github.com/datamllab/tods) | An full-stack automated time-series outlier detection system.     | ![GitHub stars](https://img.shields.io/github/stars/datamllab/tods?style=social) | <a href="https://github.com/datamllab/tods/blob/main/LICENSE"><img src="https://img.shields.io/github/license/datamllab/tods" height="15"/></a> |
 | <a href="https://github.com/SeldonIO/alibi-detect"><img src="https://raw.githubusercontent.com/SeldonIO/alibi-detect/master/doc/source/_static/Alibi_Detect_Logo_rgb.png"  width="100"/></a> | [Alibi Detect](https://github.com/SeldonIO/alibi-detect) | Algorithms for outlier, adversarial and drift detection.    | ![GitHub stars](https://img.shields.io/github/stars/SeldonIO/alibi-detect?style=social) | <a href="https://github.com/SeldonIO/alibi-detect/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SeldonIO/alibi-detect" height="15"/></a> |
 
-# Explainability
+## Explainability
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -99,7 +137,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | **LIME** | [LIME](https://github.com/marcotcr/lime) | Explaining the predictions of any machine learning classifier.     | ![GitHub stars](https://img.shields.io/github/stars/marcotcr/lime?style=social) | <a href="https://github.com/marcotcr/lime/blob/main/LICENSE"><img src="https://img.shields.io/github/license/marcotcr/lime" height="15"/></a> |
 | <a href="https://github.com/pytorch/captum"><img src="https://raw.githubusercontent.com/pytorch/captum/master/website/static/img/captum_logo.png"  width="100"/></a> | [Captum](https://github.com/pytorch/captum) | Model interpretability and understanding for PyTorch.     | ![GitHub stars](https://img.shields.io/github/stars/pytorch/captum?style=social) | <a href="https://github.com/pytorch/captum/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pytorch/captum" height="15"/></a> |
 
-# Active learning
+## Active learning
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -107,21 +145,21 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/baal-org/baal"><img src="https://camo.githubusercontent.com/a29cf47a24993d08cfdae02dabcaa04602e7fd3cd5bbd8ddf053238373409625/68747470733a2f2f692e696d6775722e636f6d2f5a647a6232515a2e706e67"  width="100"/></a> | [Bayesian Active Learning (Baal)](https://github.com/baal-org/baal) | Library to enable Bayesian active learning in your research or labeling work.     | ![GitHub stars](https://img.shields.io/github/stars/baal-org/baal?style=social) | <a href="https://github.com/baal-org/baal/blob/main/LICENSE"><img src="https://img.shields.io/github/license/baal-org/baal" height="15"/></a> |
 
 
-# Uncertainty quantification
+## Uncertainty quantification
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
 | <a href="https://github.com/uncertainty-toolbox /"><img src="https://repository-images.githubusercontent.com/293174301/60be5300-463c-11eb-9b69-70a31a38e5ee"  width="100"/></a> | [Uncertainty Toolbox](https://github.com/uncertainty-toolbox/uncertainty-toolbox/) | A Python toolbox for predictive uncertainty quantification, calibration, metrics, and visualization.    | ![GitHub stars](https://img.shields.io/github/stars/uncertainty-toolbox/uncertainty-toolbox?style=social) | <a href="https://github.com/scikit-learn-contrib/MAPIE/blob/main/LICENSE"><img src="https://img.shields.io/github/license/scikit-learn-contrib/MAPIE" height="15"/></a> |
 | <a href="https://github.com/scikit-learn-contrib/MAPIE"><img src="https://raw.githubusercontent.com/scikit-learn-contrib/MAPIE/master/doc/images/mapie_logo_nobg_cut.png"  width="100"/></a> | [MAPIE](https://github.com/scikit-learn-contrib/MAPIE) | A scikit-learn-compatible module for estimating prediction intervals.     | ![GitHub stars](https://img.shields.io/github/stars/scikit-learn-contrib/MAPIE?style=social) | <a href="https://github.com/scikit-learn-contrib/MAPIE/blob/main/LICENSE"><img src="https://img.shields.io/github/license/scikit-learn-contrib/MAPIE" height="15"/></a> |
 
-# Bias and fairness
+## Bias and fairness
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
 | <a href="https://github.com/Trusted-AI/AIF360"><img src="https://artwork.lfaidata.foundation/projects/ai-fairness-360/icon/color/ai-fairness-360-icon-color.png"  width="100"/></a> | [AIF360](https://github.com/Trusted-AI/AIF360) | The AI Fairness 360 toolkit helps to detect and mitigate bias in machine learning models throughout the AI application lifecycle.    | ![GitHub stars](https://img.shields.io/github/stars/Trusted-AI/AIF360?style=social) | <a href="https://github.com/Trusted-AI/AIF360/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Trusted-AI/AIF360" height="15"/></a> |
 | <a href="https://github.com/fairlearn/fairlearn"><img src="https://avatars.githubusercontent.com/u/54074260?s=60&v=4"  width="100"/></a> | [Fairlearn](https://github.com/fairlearn/fairlearn) | A Python package to assess and improve fairness of machine learning models.     | ![GitHub stars](https://img.shields.io/github/stars/fairlearn/fairlearn?style=social) | <a href="https://github.com/fairlearn/fairlearn/blob/main/LICENSE"><img src="https://img.shields.io/github/license/fairlearn/fairlearn" height="15"/></a> |
 
-# Drift Detection and Monitoring
+## Drift Detection and Monitoring
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -130,7 +168,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/evidentlyai/evidently"><img src="https://avatars.githubusercontent.com/u/75031056?s=200&v=4"  width="100"/></a> | [Evidently](https://github.com/evidentlyai/evidently) | An open-source framework to evaluate, test and monitor ML models in production.    | ![GitHub stars](https://img.shields.io/github/stars/evidentlyai/evidently?style=social) | <a href="https://github.com/evidentlyai/evidently/blob/main/LICENSE"><img src="https://img.shields.io/github/license/evidentlyai/evidently" height="15"/></a> |
 | <a href="https://github.com/IFCA/frouros"><img src="https://raw.githubusercontent.com/IFCA/frouros/main/images/logo.png"  width="100"/></a> | [Frouros](https://github.com/IFCA/frouros) | Frouros is an open source Python library for drift detection in machine learning systems.    | ![GitHub stars](https://img.shields.io/github/stars/IFCA/frouros?style=social) | <a href="https://github.com/IFCA/frouros/blob/main/LICENSE"><img src="https://img.shields.io/github/license/IFCA/frouros" height="15"/></a> |
 
-# Augmentation and synthetic data
+## Augmentation and synthetic data
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -139,7 +177,7 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/sdv-dev/SDV"><img src="https://raw.githubusercontent.com/sdv-dev/SDV/master/docs/images/SDV-DataCebo.png"  width="100"/></a> | [SDV](https://github.com/sdv-dev/SDV) | Synthetic Data Generation for tabular, relational and time series data.     | ![GitHub stars](https://img.shields.io/github/stars/sdv-dev/SDV?style=social) | <a href="https://github.com/sdv-dev/SDV/blob/main/LICENSE"><img src="https://img.shields.io/github/license/sdv-dev/SDV" height="15"/></a> |
 | <a href="https://github.com/ydataai/ydata-synthetic"><img src="https://assets.ydata.ai/oss/ydata-synthetic-_red.png"  width="100"/></a> | [YData Synthetic](https://github.com/ydataai/ydata-synthetic) | YData Synthetic is a python package to generate synthetic tabular and time-series data by leveraging state-of-the-art generative models. | ![GitHub stars](https://img.shields.io/github/stars/ydataai/ydata-synthetic?style=social) | <a href="https://github.com/ydataai/ydata-synthetic/blob/dev/LICENSE"><img src="https://img.shields.io/github/license/ydataai/ydata-synthetic" height="15"/></a> |
 
-# Adversarial Robustness
+## Adversarial Robustness
 
 | Logo | Name | Description | Popularity | License |
 | ------- | ---- | ----------- | ---------- | -------- |
@@ -147,7 +185,14 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox"><img src="https://raw.githubusercontent.com/Trusted-AI/adversarial-robustness-toolbox/main/docs/images/art_lfai.png"  width="100"/></a> | [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) | Python Library for Machine Learning Security - Evasion, Poisoning, Extraction, Inference - Red and Blue Teams.    | ![GitHub stars](https://img.shields.io/github/stars/Trusted-AI/adversarial-robustness-toolbox?style=social) | <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Trusted-AI/adversarial-robustness-toolbox" height="15"/></a> |
 | <a href="https://github.com/bethgelab/foolbox"><img src="https://raw.githubusercontent.com/bethgelab/foolbox/master/guide/.vuepress/public/logo_small.png"  width="100"/></a> | [Foolbox](https://github.com/bethgelab/foolbox) | Foolbox is a Python library that lets you easily run adversarial attacks against machine learning models like deep neural networks.    | ![GitHub stars](https://img.shields.io/github/stars/bethgelab/foolbox?style=social) | <a href="https://github.com/bethgelab/foolbox/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bethgelab/foolbox" height="15"/></a> |
 
+# 📖 Further reading
 
+In order to keep a useful focus and to prevent duplicate work, we excluded some topics from this list. Read more about them here:
+
+1. DCAI tools for tabular data. There is an [awesome list](https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai) for that maintained by the [Ydata team](https://github.com/Data-Centric-AI-Community).
+2. Labeling tools. Although labeling is part of the DCAI workflow, we refer to the [awesome list](https://github.com/zenml-io/awesome-open-data-annotation) of the [ZenML team](https://github.com/zenml-io) on that topic. 
+3. MLOps tooling. We exclude all topics that are clearly out of the DCAI scope and refer to established [MLOps awesome lists](https://github.com/EthicalML/awesome-production-machine-learning) for these tools.
+4. Research papers. We focus on industrial-ready open source tooling, check out [this list](https://github.com/HazyResearch/data-centric-ai) for a research-oriented view on DCAI.
 
 
 
