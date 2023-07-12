@@ -29,45 +29,6 @@ In order to keep a useful focus and to prevent duplicate work, we exclude some t
 ## :open_hands: Contributing
 Do you think something is missing? Please help contribute to this list by contacting us or adding a pull request.
 
-# 🏀 Data-centric AI playbook
-
-<p align="center"><a href="https://github.com/Renumics/awesome-open-data-centric-ai"><img src="static/img/dcai_workflow.svg" width="100%"/></a></p>
-
-## Exploratory data analysis (EDA)
-
-| Name | Data type | Description | Notebook | 
-| ---- | ---- | ---- | ----------- | 
-| [Understand distributions](https://renumics.com/docs/playbook/huggingface-embedding) | image  | Use the Huggingface transformers library to compute image embeddings and explore the dataset based on the similarity map and additional metdata. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/huggingface_embedding.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-## Cleaning
-
-| Name | Data type | Description | Notebook | 
-| ---- | ---- | ---- | ----------- | 
-| [Detect duplicates](https://renumics.com/docs/playbook/duplicates-annoy/) | agnostic  | Use the Annoy library to detect nearest neighbors in the embedding space and inspect data points that are duplicates / near duplicates. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/detect_duplicates.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| [Detect outliers](https://renumics.com/docs/playbook/outliers-cleanlab/) | agnostic  | Use the Cleanlab library to compute outlier scores based on model output (embeddings, probabilities) and inspect outlier candidates. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/outlier_cleanlab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| [Detect image issues](https://renumics.com/docs/playbook/cv-issues/) | image  | Use the Cleanvision library to extrapact typical image issues (brightness, blurr, aspect ratio, SNR and duplicates) and identify critical segments through manual inspection.| <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/playbook_initial_draft/playbook/rookie/cv_issue_detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-## Annotation
-
-| Name | Data type | Description | Notebook | 
-| ---- | ---- | ---- | ----------- | 
-| [Find label inconsistencies](https://renumics.com/docs/playbook/label-errors-cleanlab/) | agnostic | Use the Cleanlab library to compute label error flags based on model probabilities and manually inspect critical data segments. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/label_errors_cleanlab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-## Modeling
-| Name | Data type | Description | Notebook | 
-| ---- | ---- | ---- | ----------- | 
-| [Detect leakage](https://renumics.com/docs/playbook/leakage-annoy/) | agnostic | Use nearest neighbor distances to identify candidates for data leakage and manual inspect them | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/leakage_annoy.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-## Validation
-| Name | Data type | Description | Notebook | 
-| ---- | ---- | ---- | ----------- | 
-| [Inspect decision boundaries](https://renumics.com/docs/playbook/decision-boundary/) | agnostic | Compute a decision boundary score based on certainty ratios and inspect the results in a scatter plot. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/decision_boundary_detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-## Monitoring
-| Name | Data type | Description | Notebook | 
-| ---- | ---- | ---- | ----------- | 
-| [Detect data drift ](https://renumics.com/docs/playbook/label-errors-cleanlab/) | agnostic | Compute the cosine distance of the k-nearest neighbor in the embedding space as the drift distance and inspect critical segments. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/drift_kcore.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 
 # 🧰 Tooling
 
@@ -185,6 +146,45 @@ Do you think something is missing? Please help contribute to this list by contac
 | <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox"><img src="https://raw.githubusercontent.com/Trusted-AI/adversarial-robustness-toolbox/main/docs/images/art_lfai.png"  width="100"/></a> | [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) | Python Library for Machine Learning Security - Evasion, Poisoning, Extraction, Inference - Red and Blue Teams.    | ![GitHub stars](https://img.shields.io/github/stars/Trusted-AI/adversarial-robustness-toolbox?style=social) | <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Trusted-AI/adversarial-robustness-toolbox" height="15"/></a> |
 | <a href="https://github.com/bethgelab/foolbox"><img src="https://raw.githubusercontent.com/bethgelab/foolbox/master/guide/.vuepress/public/logo_small.png"  width="100"/></a> | [Foolbox](https://github.com/bethgelab/foolbox) | Foolbox is a Python library that lets you easily run adversarial attacks against machine learning models like deep neural networks.    | ![GitHub stars](https://img.shields.io/github/stars/bethgelab/foolbox?style=social) | <a href="https://github.com/bethgelab/foolbox/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bethgelab/foolbox" height="15"/></a> |
 
+# 🏀 Data-centric AI playbook
+
+<p align="center"><a href="https://github.com/Renumics/awesome-open-data-centric-ai"><img src="static/img/dcai_workflow.svg" width="100%"/></a></p>
+
+## Exploratory data analysis (EDA)
+
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Understand distributions](https://renumics.com/docs/playbook/huggingface-embedding) | image  | Use the Huggingface transformers library to compute image embeddings and explore the dataset based on the similarity map and additional metdata. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/huggingface_embedding.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Cleaning
+
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Detect duplicates](https://renumics.com/docs/playbook/duplicates-annoy/) | agnostic  | Use the Annoy library to detect nearest neighbors in the embedding space and inspect data points that are duplicates / near duplicates. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/detect_duplicates.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| [Detect outliers](https://renumics.com/docs/playbook/outliers-cleanlab/) | agnostic  | Use the Cleanlab library to compute outlier scores based on model output (embeddings, probabilities) and inspect outlier candidates. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/outlier_cleanlab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| [Detect image issues](https://renumics.com/docs/playbook/cv-issues/) | image  | Use the Cleanvision library to extrapact typical image issues (brightness, blurr, aspect ratio, SNR and duplicates) and identify critical segments through manual inspection.| <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/playbook_initial_draft/playbook/rookie/cv_issue_detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Annotation
+
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Find label inconsistencies](https://renumics.com/docs/playbook/label-errors-cleanlab/) | agnostic | Use the Cleanlab library to compute label error flags based on model probabilities and manually inspect critical data segments. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/label_errors_cleanlab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Modeling
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Detect leakage](https://renumics.com/docs/playbook/leakage-annoy/) | agnostic | Use nearest neighbor distances to identify candidates for data leakage and manual inspect them | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/leakage_annoy.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Validation
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Inspect decision boundaries](https://renumics.com/docs/playbook/decision-boundary/) | agnostic | Compute a decision boundary score based on certainty ratios and inspect the results in a scatter plot. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/decision_boundary_detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+## Monitoring
+| Name | Data type | Description | Notebook | 
+| ---- | ---- | ---- | ----------- | 
+| [Detect data drift ](https://renumics.com/docs/playbook/label-errors-cleanlab/) | agnostic | Compute the cosine distance of the k-nearest neighbor in the embedding space as the drift distance and inspect critical segments. | <a href="https://colab.research.google.com/github/Renumics/spotlight/blob/main/playbook/rookie/drift_kcore.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
 # 📖 Further reading
 
 In order to keep a useful focus and to prevent duplicate work, we excluded some topics from this list. Read more about them here:
@@ -193,7 +193,6 @@ In order to keep a useful focus and to prevent duplicate work, we excluded some 
 2. Labeling tools. Although labeling is part of the DCAI workflow, we refer to the [awesome list](https://github.com/zenml-io/awesome-open-data-annotation) of the [ZenML team](https://github.com/zenml-io) on that topic. 
 3. MLOps tooling. We exclude all topics that are clearly out of the DCAI scope and refer to established [MLOps awesome lists](https://github.com/EthicalML/awesome-production-machine-learning) for these tools.
 4. Research papers. We focus on industrial-ready open source tooling, check out [this list](https://github.com/HazyResearch/data-centric-ai) for a research-oriented view on DCAI.
-
 
 
 
