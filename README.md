@@ -30,6 +30,7 @@ In order to keep a useful focus and to prevent duplicate work, we exclude some t
 Do you think something is missing? Please help contribute to this list by contacting us or adding a pull request.
 
 
+- [guardian-agent-prompts](https://github.com/milkomida77/guardian-agent-prompts) - 49 production-tested AI agent system prompts for multi-agent orchestration with data-centric quality gates and automated validation. MIT licensed.
 # 🧰 Tooling
 
 ## 📒 Categories
